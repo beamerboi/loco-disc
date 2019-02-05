@@ -109,4 +109,4 @@ console.log(prefix);
     
 
 })
-bot.login(process.env.Token);
+bot.login(token).catch(err => console.log(err));
