@@ -108,5 +108,4 @@ console.log(prefix);
     
 
 })
-
-bot.login(botconfig.token);
+bot.login(process.env.Token);
