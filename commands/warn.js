@@ -3,7 +3,7 @@ const fs = require('fs');
 const ms = require ('ms');
 const errors = require("../util/errors.js");
 
-let warns = JSON.parse(fs.readFileSync("./warning.json","utf8"));
+let warns = JSON.parse(fs.readFileSync("../warning.json","utf8"));
 
 module.exports.run= async (bot , message , args) => {
 if(!message.member.hasPermission("KICK_MEMBERS")) return errors.noPerms(message,"KICK_MEMBERS");
