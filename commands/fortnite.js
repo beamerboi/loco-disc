@@ -22,9 +22,12 @@ let data = ft.user(username, platform).then(data =>{
 
 
    let fembed = new Discord.RichEmbed()
+
    .setTitle("Fortnite Stats")
-   .setAuthor(data.username)
+   .setFooter(data.username,message.author.displayAvatarURL)
+   .setTimestamp()
    .setColor("#00ddff")
+   .setThumbnail('https://cdn.discordapp.com/attachments/534460822462922762/542445643701157919/Fortnite2Fsearch-for-survivors2FsignupBanner-155x221-7d1f31411baf91e6cadf490c6f60f98a72b38b4c.png')
    .addField("Wins", wins,true)
    .addField("Kills", kills,true)
    .addField("Score", score,true)
@@ -38,7 +41,7 @@ let data = ft.user(username, platform).then(data =>{
 
 }).catch(e=>{
 console.log(e);
-message.channel.send("Couldn't find that username in the database");
+message.channel.send("**Couldn't find that username in the database**");
 
 });
 }

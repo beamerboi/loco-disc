@@ -11,8 +11,9 @@ let dogembed = new Discord.RichEmbed()
 .setColor('#b75814')
 .setTitle('Here is a cute Dog for ya ! :dog:')
 .setImage(body.url)        
-.setFooter(`${bot.user.username}`, bot.user.displayAvatarURL)
-.setTimestamp();
+.setFooter("i can predict more",message.author.displayAvatarURL)
+   .setTimestamp();
+
 
 
 message.channel.send(dogembed);

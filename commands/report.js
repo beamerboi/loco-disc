@@ -4,7 +4,7 @@ module.exports.run = async(bot , message , args) =>{
    
         let rUser = message.mentions.members.first()  || message.guild.members.get(args[0]);
         if(!rUser) return message.channel.send("Make sure you mentioned the right person. ");
-        let reason = args.join(" ").slice(22);
+        let reason = args.join(" ") || "None";
          message.channel.send(`Thanks for reporting ${rUser} `)
 
         let reportEmbed = new Discord.RichEmbed()
@@ -15,7 +15,7 @@ module.exports.run = async(bot , message , args) =>{
         .addField("Channel", message.channel)
         .addField("Time", message.createdAt)  
         .addField("Reason", reason)
-        .setFooter(`${bot.user.username}`, bot.user.displayAvatarURL)
+        .setFooter("Reported successfully", message.author.displayAvatarURL)
         .setTimestamp();
         
         let reportschannel = message.guild.channels.find(c => c.name === "warns");

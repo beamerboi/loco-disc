@@ -18,11 +18,13 @@ let difference = nxtlvlxp - currxp
 
 let lvlEmbed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
-.setColor(purple)
+.setColor("#b709c4")
 .addField("Your current level is", currlvl,true)
 .addField("your current xp is",currxp,true)
 .addField(`XP till level up : `, `${difference} XP`,true)
-.setFooter("Loco",message.author.displayAvatarURL);
+.setFooter("your level is all here",message.author.displayAvatarURL)
+   .setTimestamp();
+
 message.channel.send(lvlEmbed).then(msg=> {msg.delete(5000)});
 }
 

@@ -1,10 +1,11 @@
 const Disocrd = require('discord.js');
 const ms = require('ms');
+const errors = require("../util/errors.js");
 
 module.exports.run = async (bot,message, args) => {
 let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 if(!tomute) return message.reply("make sure you mentioned the right target. ");
-if(tomute.hasPermission("ADMINISTRATOR")) return message.reply(`i'm not gonna let you do that...do you think i was born yesterday...joke's on you pal i was born in ${bot.user.createdAt.toDateString()}`);
+if(tomute.hasPermission("ADMINISTRATOR")) return errors.noPerms(message,"ADMINISTRATOR");
 let muterole = message.guild.roles.find('name',"muted");
 //tasnaa e role
 if(!muterole){
@@ -43,7 +44,7 @@ let muteEmbed = new Disocrd.RichEmbed()
             .addField("Muted By ", `<@${message.author.id}> with ID : ${message.author.id}`)
             .addField("Muted in", message.channel, true)
             .addField("For", `${ms(ms(mutetime))}`, true)
-            .setFooter(`${bot.user.username}`, bot.user.displayAvatarURL)
+            .setFooter("SHHHHH!", message.author.displayAvatarURL)
             .setTimestamp()
 
             let muteChannel = message.guild.channels.find(c => c.name === "warns");

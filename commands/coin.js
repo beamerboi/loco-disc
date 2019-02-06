@@ -15,8 +15,9 @@ let coinsEmbed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
 .setColor("#faff00")
 .addField(`:money_with_wings:  ${ucoins}`, `${message.author}`)
-.setFooter(`${bot.user.username}`, bot.user.displayAvatarURL)
-.setTimestamp();
+.setFooter("MONEY MONEY MONEY",message.author.displayAvatarURL)
+   .setTimestamp();
+
 message.channel.send(coinsEmbed).then(msg =>{msg.delete(5000)});
 }
 

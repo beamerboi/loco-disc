@@ -10,8 +10,9 @@ module.exports.run = async(bot , message , args) =>{
         .addField("Bot Name", bot.user.username,true)
         .addField("Server Connected",bot.guilds.size,true)
         .addField("Created On", bot.user.createdAt)
-        .setFooter(`${bot.user.username}`, bot.user.displayAvatarURL)
-        .setTimestamp();
+        .setFooter("Here is my infos",message.author.displayAvatarURL)
+   .setTimestamp();
+
     
         return message.channel.send(botembed);
 }

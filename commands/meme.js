@@ -10,8 +10,9 @@ module.exports.run = async (bot, message , args) =>{
     .setTitle('Jeff Laughed on that')
     .setImage(url)
     .setColor("#0c9607")
-    .setFooter(`${bot.user.username}`, bot.user.displayAvatarURL)
+    .setFooter("I am the meme lord , bet me if you can",message.author.displayAvatarURL)
     .setTimestamp();
+ 
 
     message.channel.send(memeEmbed)
 })

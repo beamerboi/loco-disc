@@ -1,14 +1,16 @@
 const Discord = require('discord.js');
 const fs = require('fs');
 const ms = require ('ms');
-let warns = JSON.parse(fs.readFileSync("./warning.json","utf8"));
+const errors = require("../util/errors.js");
+
+let warns = JSON.parse(fs.readFileSync("../warning.json","utf8"));
 
 module.exports.run= async (bot , message , args) => {
-if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply(`i'm not gonna let you do that...do you think i was born yesterday...joke's on you pal i was born in ${bot.user.createdAt.toDateString()}`);
+if(!message.member.hasPermission("KICK_MEMBERS")) return errors.noPerms(message,"KICK_MEMBERS");
 let wUser = message.guild.member(message.mentions.users.first()) || message.guild.member.get(args[0])
 if(!wUser) return message.reply("huh , couldn't find the target")
 if(wUser.hasPermission("KICK_MEMBERS")) return message.reply("they waaaaaaaay too kewl !")
-let reason = args.join(" ").slice(22);
+let reason = args.join(" ") ||"None";
 
 if(!warns[wUser.id]) warns[wUser.id] = {
     warns: 0
@@ -16,7 +18,7 @@ if(!warns[wUser.id]) warns[wUser.id] = {
 
 warns[wUser.id].warns++;
 
-fs.writeFile("./warning.json", JSON.stringify(warns), (err) => {
+fs.writeFile("../warning.json", JSON.stringify(warns), (err) => {
     if(err) console.log(err);
 });
 
@@ -28,9 +30,8 @@ let warnEmbed = new Discord.RichEmbed()
 .addField("Warned In ",message.channel)
 .addField("Number of Warnings", warns[wUser.id].warns)
 .addField("Reason", reason)
-.setFooter(`${bot.user.username}`, bot.user.displayAvatarURL)
-.setTimestamp();
-
+.setFooter("Warned successfully",message.author.displayAvatarURL)
+   .setTimestamp();
 
 let warnChannel = message.guild.channels.find('name',"incidents");
 if(!warnChannel) return message.reply("Couldn't find The Channel");

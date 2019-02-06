@@ -11,8 +11,9 @@ randomPuppy('boobs').then(url =>{
     .setTitle("That's Hot")
     .setImage(url)
     .setColor("#0c9607")
-    .setFooter(`${bot.user.username}`, bot.user.displayAvatarURL)
+    .setFooter("Have fun",message.author.displayAvatarURL)
     .setTimestamp();
+ 
 
     message.channel.send(memeEmbed)
 })

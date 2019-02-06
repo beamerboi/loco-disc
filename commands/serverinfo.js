@@ -14,7 +14,7 @@ module.exports.run = async(bot , message , args) =>{
             .addField("Created On",`**[${ message.guild.createdAt}]**`,true)
             .addField("You Joined At", `**[${message.member.joinedAt}]**`,true)
             .addField("Total Members", `**${message.guild.memberCount}**`,true)
-            .setFooter(`${bot.user.username}`, bot.user.displayAvatarURL)
+            .setFooter("Those are the server infos", message.author.displayAvatarURL)
             .setTimestamp();
             return message.channel.send(serverembed);
         

@@ -10,7 +10,7 @@ module.exports.run = async (bot, message , args) =>{
     .setTitle('Here you go')
     .setImage(url)
     .setColor("#4286f4")
-    .setFooter(`${bot.user.username}`, bot.user.displayAvatarURL)
+    .setFooter("feels drowning ? , here you go", message.author.displayAvatarURL)
     .setTimestamp();
 
     message.channel.send(motivateEmbed)

@@ -11,8 +11,9 @@ let catembed = new Discord.RichEmbed()
 .setColor('#b71468')
 .setTitle('Here is a cute Cat for ya ! :cat:')
 .setImage(body.file)
-.setFooter(`${bot.user.username}`, bot.user.displayAvatarURL)
-.setTimestamp();
+.setFooter("Cute,isn't it ?",message.author.displayAvatarURL)
+   .setTimestamp();
+
 
 
 message.channel.send(catembed);
