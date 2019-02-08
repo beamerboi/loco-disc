@@ -4,7 +4,7 @@ const errors = require("../util/errors.js");
 module.exports.run = async(bot , message , args) =>{
     let kUser = message.guild.member(message.mentions.users.first()  || message.guild.members.get(args[0]));
             if(!kUser) return message.channel.send("Double check the mentioned user please !");
-            let kReason = args.join(" ").slice(22);
+    let kReason = args.join(" ") || "None";
     if(!message.member.hasPermission("KICK_MEMBERS")) return errors.noPerms(message,"KICK_MEMBERS");
     if(kUser.hasPermission("KICK_MEMBERS")) return message.channel.send("that person can't be kicked !");
             let kickxEmbed = new Discord.RichEmbed()
