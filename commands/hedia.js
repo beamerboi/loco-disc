@@ -6,7 +6,7 @@ const randomPuppy = require('random-puppy');
 module.exports.run = async (bot, message, args) => {
     if (!message.channel.nsfw) return message.channel.send('The Room should be ``NSFW``');
 
-    randomPuppy('stepmomsex').then(url => {
+    randomPuppy('sex').then(url => {
         let memeEmbed = new Discord.RichEmbed()
             .setTitle("That's Hot")
             .setImage(url)
