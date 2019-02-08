@@ -7,7 +7,7 @@ module.exports.run = async(bot , message , args) =>{
             let kReason = args.join(" ").slice(22);
     if(!message.member.hasPermission("KICK_MEMBERS")) return errors.noPerms(message,"KICK_MEMBERS");
     if(kUser.hasPermission("KICK_MEMBERS")) return message.channel.send("that person can't be kicked !");
-            let kickEmbed = new Discord.RichEmbed()
+            let kickxEmbed = new Discord.RichEmbed()
             .setDescription("~Kick~")
             .setColor("#591040")
             .addField("Kicked user", `${kUser} with ID : ${kUser.id}`)
@@ -23,7 +23,7 @@ module.exports.run = async(bot , message , args) =>{
             if (!kickChannel) return message.channel.send("incidents channel deosn't exist.");
     
             message.guild.member(kUser).kick(kReason);
-            kickChannel.send(kickEmbed);
+            kickChannel.send(kickxEmbed);
         }
 
         module.exports.help = {
