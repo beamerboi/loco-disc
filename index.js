@@ -149,4 +149,4 @@ let prefix = prefixes[message.guild.id].prefixes;
 
 });
 
-bot.login(process.env.token);
+bot.login(process.env.Token);
