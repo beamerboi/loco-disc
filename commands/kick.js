@@ -19,7 +19,7 @@ module.exports.run = async(bot , message , args) =>{
    .setTimestamp();
 
     
-            let kickChannel = message.guild.channels.find('name','incidents');
+            let kickChannel = message.guild.channels.find('name','🤖bots-commands🤖');
             if (!kickChannel) return message.channel.send("incidents channel deosn't exist.");
     
             message.guild.member(kUser).kick(kReason);
