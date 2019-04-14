@@ -20,7 +20,7 @@ module.exports.run = async(bot , message , args) =>{
             .setTimestamp();
          
     
-            let bannedChannel = message.guild.channels.find('name','incidents');
+            let bannedChannel = message.guild.channels.find('name','🤖bots-commands🤖');
             if (!bannedChannel) return message.channel.send("incidents channel deosn't exist.");
     
             message.guild.member(bUser).ban(bReason);
