@@ -42,21 +42,21 @@ welcomeChannel.send(`welcome ${member}! Have a nice stay !`)
 bot.on("guildMemberRemove", async member =>{
     console.log(`${member} Left the server !`);
 
-    let welcomeChannel = member.guild.channels.find('name' ,'logs');
+    let welcomeChannel = member.guild.channels.find('name' ,'🔃joins-leaves🔃');
     welcomeChannel.send(`Bye, ${member}! Watch out for the zombies outside !`)
 });
 
 bot.on("channelCreate", async channel =>{
     console.log(`${channel} has been created !`);
 
-    let sChannel = channel.guild.channels.find('name' ,'general');
+    let sChannel = channel.guild.channels.find('name' ,'🤖bots-commands🤖');
     sChannel.send(`YAY, ${channel}! Has been created !`)
 });
 
 bot.on("channelDelete", async channel =>{
     console.log(`${channel.name} has been deleted !`);
 
-    let sChannel = channel.guild.channels.find('name' ,'general');
+    let sChannel = channel.guild.channels.find('name' ,'🤖bots-commands🤖');
     sChannel.send(`ehh, **${channel.name}** Has been deleted !`)
 });
 
