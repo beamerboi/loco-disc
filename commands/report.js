@@ -18,7 +18,7 @@ module.exports.run = async(bot , message , args) =>{
         .setFooter("Reported successfully", message.author.displayAvatarURL)
         .setTimestamp();
         
-        let reportschannel = message.guild.channels.find(c => c.name === "warns");
+        let reportschannel = message.guild.channels.find(c => c.name === "🤖bots-commands🤖");
         if (!reportschannel) return message.channel.send("Sorry but the report channel doesn't exist.")
 
         message.delete().catch(O_o => {});
