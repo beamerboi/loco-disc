@@ -33,7 +33,7 @@ let warnEmbed = new Discord.RichEmbed()
 .setFooter("Warned successfully",message.author.displayAvatarURL)
    .setTimestamp();
 
-let warnChannel = message.guild.channels.find('name',"incidents");
+let warnChannel = message.guild.channels.find('name',"🤖bots-commands🤖");
 if(!warnChannel) return message.reply("Couldn't find The Channel");
 warnChannel.send(warnEmbed);
 
