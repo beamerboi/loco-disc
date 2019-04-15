@@ -29,7 +29,7 @@ bot.commands.set(props.help.name , props);
 
 bot.on("ready",async ()=>{
 console.log(`${bot.user.username} is online ! on ${bot.guilds.size} servers`);
-bot.user.setActivity("Despacito 2", {type:"Watching"});
+bot.user.setActivity("/help to see my whole commands", {type:"Playing"});
 });
 
 bot.on("guildMemberAdd", async member=>{
