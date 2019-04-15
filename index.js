@@ -43,7 +43,7 @@ bot.on("guildMemberRemove", async member =>{
     console.log(`${member} Left the server !`);
 
     let welcomeChannel = member.guild.channels.find('name' ,'🔃joins-leaves🔃');
-    welcomeChannel.send(`Bye, ${member}! Watch out for the zombies outside !`)
+    welcomeChannel.send(`Bye, **${member}**! Watch out for the zombies outside !`)
 });
 
 bot.on("channelCreate", async channel =>{
