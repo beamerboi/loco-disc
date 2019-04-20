@@ -35,7 +35,7 @@ bot.user.setActivity("/help to see my whole commands", {type:"Playing"});
 bot.on("guildMemberAdd", async member=>{
 console.log(`${member} Joined the server !`);
 
-let welcomeChannel = member.guild.channels.find('name' ,'logs');
+let welcomeChannel = member.guild.channels.find('name' ,🔃joins-leaves🔃');
 welcomeChannel.send(`welcome ${member}! Have a nice stay !`)
 });
 
